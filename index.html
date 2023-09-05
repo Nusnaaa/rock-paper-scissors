@@ -7,7 +7,19 @@
 </head>
 <body>
     <script>
-        console.log('Hello World!')
+        function getComputerChoice() {
+            // This array holds the different options for the game
+            options = ['Rock', 'Paper', 'Scissors'];
+
+            // Ramdomly pick a number
+            index = Math.floor(Math.random() * options.length);
+
+            // Index 'options' using the randomly picked number
+            return options[index]
+
+        }
+
+        console.log(getComputerChoice())
     </script>
 </body>
 </html>
