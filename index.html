@@ -21,8 +21,7 @@
 
         function playRound(playerSelection, computerSelection){
             
-            playerSelection = playerSelection.toLowerCase()
-
+            
             if (playerSelection == 'rock' && computerSelection == 'paper') {
                 return 'You lose! Paper beats Rock'
             }
@@ -46,11 +45,23 @@
             }
         }
 
-        // to test
-        let playerSelection = 'Rock'
-        let computerSelection = getComputerChoice().toLowerCase()
+        function game() {
+            // this function allows five rounds to be played without refreshing the webpage
 
-        console.log(playRound(playerSelection, computerSelection))
+            for (step = 0; step < 5; step++) {
+                let playerSelection = playerInput();
+                let computerSelection = getComputerChoice().toLowerCase();
+                console.log(playRound(playerSelection, computerSelection))
+            }
+        }
+
+        function playerInput() {
+            input = prompt('Select one option - Rock, Paper, Scissors: ');
+            return input.toLowerCase()
+        }
+
+        
+        console.log(game())
     </script>
 </body>
 </html>
