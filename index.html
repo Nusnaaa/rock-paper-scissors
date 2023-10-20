@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="rock" class="btn">Rock</button>
+    <button id="paper" class="btn">Paper</button>
+    <button id="scissors" class="btn">Scissors</button>
+    <div class="results">
+
+    </div>
     <script>
         function getComputerChoice() {
             // This array holds the different options for the game
@@ -19,8 +25,9 @@
 
         }
 
-        function playRound(playerSelection, computerSelection){
+        function playRound(playerSelection){
             
+            let computerSelection = getComputerChoice().toLowerCase();
             
             if (playerSelection == 'rock' && computerSelection == 'paper') {
                 return 'You lose! Paper beats Rock'
@@ -45,19 +52,20 @@
             }
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            let playerActions = document.getElementsByClassName('btn');
+            playerActions.addEventListener('click',() => {
+                console.log(playRound(playerActions)
+                )}
+        )}
+        )
+
         function game() {
-            // this function allows five rounds to be played without refreshing the webpage
+            // this function allows the rounds to be initiated with a player's input
 
-            for (step = 0; step < 5; step++) {
-                let playerSelection = playerInput();
-                let computerSelection = getComputerChoice().toLowerCase();
-                console.log(playRound(playerSelection, computerSelection))
-            }
-        }
-
-        function playerInput() {
-            input = prompt('Select one option - Rock, Paper, Scissors: ');
-            return input.toLowerCase()
+                // let playerActions = document.querySelector('.button');
+                // let playerSelection = playerActions.addEventListener('click',playRound(playerActions))
+                // console.log(playerSelection)
         }
 
         
