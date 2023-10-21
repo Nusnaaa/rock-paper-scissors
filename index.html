@@ -25,9 +25,12 @@
 
         }
 
-        function playRound(playerSelection){
+        function playRound(){
             
             let computerSelection = getComputerChoice().toLowerCase();
+
+            let btn = document.querySelector('btn')
+            let playerSelection = btn.addEventListener('click', )
             
             if (playerSelection == 'rock' && computerSelection == 'paper') {
                 return 'You lose! Paper beats Rock'
@@ -52,14 +55,8 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            let playerActions = document.getElementsByClassName('btn');
-            playerActions.addEventListener('click',() => {
-                console.log(playRound(playerActions)
-                )}
-        )}
-        )
-
+        document.addEventListener('click',playRound())
+        
         function game() {
             // this function allows the rounds to be initiated with a player's input
 
